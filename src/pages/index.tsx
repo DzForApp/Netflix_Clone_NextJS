@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Banner from "../components/Banner";
 import Header from "../components/Header";
 
 const Home: NextPage = () => {
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
+      <Banner />
 
       <main className="flex w-full  bg-red-600 flex-col items-cener justify-center px-20 text-center">
         <section></section>
