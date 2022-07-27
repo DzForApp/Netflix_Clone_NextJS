@@ -5,6 +5,7 @@ import Banner from "../components/Banner";
 import Header from "../components/Header";
 import { Movie } from "../../typigns";
 import requests from "../utils/request";
+import Row from "../components/Row";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -39,7 +40,17 @@ const Home = ({
 
       <main className="flex w-full flex-col items-cener justify-center pb-24 pl-4 lg:space-y-24 lg:pl-16">
         <Banner netflixOriginals={netflixOriginals} />
-        <section></section>
+
+        <section>
+          <Row title="Trending Now" movies={trendingNow} />
+          <Row title="Top Rated" movies={topRated} />
+          <Row title="Action Thrillers" movies={actionMovies} />
+          {/*My List */}
+          <Row title="Cmodeies" movies={comedyMovies} />
+          <Row title="Scary Movies" movies={horrorMovies} />
+          <Row title="Romance Movies" movies={romanceMovies} />
+          <Row title="Documentaries" movies={documentaries} />
+        </section>
       </main>
     </div>
   );
