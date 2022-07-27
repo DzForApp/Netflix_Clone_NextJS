@@ -36,9 +36,9 @@ const Home = ({
       </Head>
 
       <Header />
-      <Banner netflixOriginals={netflixOriginals} />
 
-      <main className="flex w-full  bg-red-600 flex-col items-cener justify-center px-20 text-center">
+      <main className="flex w-full flex-col items-cener justify-center pb-24 pl-4 lg:space-y-24 lg:pl-16">
+        <Banner netflixOriginals={netflixOriginals} />
         <section></section>
       </main>
     </div>
