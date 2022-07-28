@@ -29,8 +29,9 @@ const Home = ({
   trendingNow,
 }: Props) => {
   console.log(netflixOriginals);
+  console.log(romanceMovies);
   return (
-    <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511]">
+    <div className="relative h-screen bg-gradient-to-b  ">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -38,11 +39,12 @@ const Home = ({
 
       <Header />
 
-      <main className="flex w-full flex-col items-cener justify-center pb-24 pl-4 lg:space-y-24 lg:pl-16">
+      <main className="flex w-full flex-col items-cener justify-center  pl-4 lg:-space-y-[20vh] lg:pl-16">
         <Banner netflixOriginals={netflixOriginals} />
 
-        <section>
+        <section className="space-y-12">
           <Row title="Trending Now" movies={trendingNow} />
+
           <Row title="Top Rated" movies={topRated} />
           <Row title="Action Thrillers" movies={actionMovies} />
           {/*My List */}
