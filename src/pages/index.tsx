@@ -6,6 +6,10 @@ import Header from "../components/Header";
 import { Movie } from "../../typigns";
 import requests from "../utils/request";
 import Row from "../components/Row";
+import useAuth from "../hooks/useAuth";
+import { useRecoilValue } from "recoil";
+import { modalState } from "../atoms/modalAtom";
+import Modal from "../components/Modal";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -28,8 +32,14 @@ const Home = ({
   topRated,
   trendingNow,
 }: Props) => {
-  console.log(netflixOriginals);
-  console.log(romanceMovies);
+  const { logout, loading } = useAuth();
+  //global state management using Recoil
+  const showModal = useRecoilValue(modalState);
+  //the previous line is the same as the next line
+  // const [showModal, setShowModal] = useState(false)
+
+  if (loading) return null;
+
   return (
     <div className="relative h-screen bg-gradient-to-b  ">
       <Head>
@@ -54,6 +64,8 @@ const Home = ({
           <Row title="Documentaries" movies={documentaries} />
         </section>
       </main>
+      {/* the use of the "showmodal" state declared above unsing Recoil */}
+      {showModal && <Modal />}
     </div>
   );
 };

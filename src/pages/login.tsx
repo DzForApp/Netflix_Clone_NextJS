@@ -19,10 +19,11 @@ function login() {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) => {
+    console.log(Login);
+
     if (!Login) {
       await singIn(email, password);
     } else {
-      //
       await singUp(email, password);
     }
   };
@@ -87,12 +88,21 @@ function login() {
         <button
           type="submit"
           className="w-full rounded bg-[#e50914] py-3 font-semibold"
+          onClick={() => {
+            setLogin(false);
+          }}
         >
           Sing In
         </button>
         <div className="text-[gray]">
           New to Netflix?{" "}
-          <button type="submit" className="text-white  hover:underline    ">
+          <button
+            type="submit"
+            className="text-white  hover:underline "
+            onClick={() => {
+              setLogin(true);
+            }}
+          >
             Sing up now
           </button>
         </div>

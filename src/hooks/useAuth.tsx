@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         } else {
           //not Logged In
           setUser(null);
-          setLoading(false);
+          setLoading(true);
           router.push("/login");
         }
         setInitialLoading(false);
@@ -82,6 +82,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       .catch((error) => alert(error.message))
       .finally(() => setLoading(false));
   };
+  //la fonction de Logout
   const logout = async () => {
     setLoading(true);
 
