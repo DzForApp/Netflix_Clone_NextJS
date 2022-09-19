@@ -1,4 +1,4 @@
-# Next.js + Tailwind CSS Example
+# Netflix clone (Next.js - Tailwind CSS - Firebase)
 email: test@test.com
 pwd: 123456
 
