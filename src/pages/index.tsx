@@ -41,7 +41,11 @@ const Home = ({
   if (loading) return null;
 
   return (
-    <div className="relative h-screen bg-gradient-to-b  ">
+    <div
+      className={`relative h-screen bg-gradient-to-b  ${
+        showModal && " !h-screen overflow-hidden"
+      } `}
+    >
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
