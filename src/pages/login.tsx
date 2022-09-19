@@ -1,8 +1,17 @@
+//import { useFormik } from "formik";
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import useAuth from "../hooks/useAuth";
+
+/* import * as yup from 'yup';
+
+let signInSchema = yup.object().shape({
+  email: yup.string().email().required().min(3,"email must be min 3 characters"),
+  password: yup.number().required().positive().integer(),
+ 
+}); */
 
 interface Inputs {
   email: string;
@@ -11,6 +20,17 @@ interface Inputs {
 function login() {
   const [Login, setLogin] = useState(false);
   const { singIn, singUp } = useAuth(); //to use our customized hook
+
+  /* const {values,errors,handleChange, setFieldValue} =useFormik({
+    initialValues:{
+      email:"",
+      passowrd:""
+    },
+    onSubmit:(values)=>{
+
+    },
+    validationSchema:signInSchema
+  }) */
   const {
     register,
     handleSubmit,
