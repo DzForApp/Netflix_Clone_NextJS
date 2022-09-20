@@ -10,6 +10,7 @@ import useAuth from "../hooks/useAuth";
 import { useRecoilValue } from "recoil";
 import { modalState } from "../atoms/modalAtom";
 import Modal from "../components/Modal";
+import Plans from "../components/Plans";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -37,8 +38,10 @@ const Home = ({
   const showModal = useRecoilValue(modalState);
   //the previous line is the same as the next line
   // const [showModal, setShowModal] = useState(false)
+  const subscription = false;
+  if (loading || subscription === null) return null;
 
-  if (loading) return null;
+  if (!subscription) return <Plans />;
 
   return (
     <div
